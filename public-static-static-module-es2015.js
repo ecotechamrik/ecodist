@@ -11,26 +11,28 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContactusComponent", function() { return ContactusComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
-/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/environments/environment */ "./src/environments/environment.ts");
-/* harmony import */ var _common_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../common.service */ "./src/app/public/common.service.ts");
+/* harmony import */ var _services_common_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../_services/common.service */ "./src/app/_services/common.service.ts");
 
 
 
-
+const _c0 = ["iframe"];
 class ContactusComponent {
     /* Using Cell No. and Office Phone no. from a Common Service */
     constructor(commonService) {
         this.commonService = commonService;
-        this.Cell = commonService.Cell;
-        this.OfficePhone = commonService.OfficePhone;
-        this.Fax = src_environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].Fax;
-        this.ContactEmail = src_environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].ContactEmail;
     }
-    ngOnInit() {
+    // Setting iFrame Src Dynamically - Normally it does not bind the Src with Property
+    ngAfterViewInit() {
+        this.iframe.nativeElement.setAttribute('src', this.commonService.WebsiteInfo.AddressMap);
     }
 }
-ContactusComponent.ɵfac = function ContactusComponent_Factory(t) { return new (t || ContactusComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_common_service__WEBPACK_IMPORTED_MODULE_2__["CommonService"])); };
-ContactusComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: ContactusComponent, selectors: [["app-contactus"]], decls: 40, vars: 8, consts: [[1, "container"], [1, "text-center", "p-3"], [1, "form-group"], [1, "font-52"], ["for", ""], ["title", "", 1, "color-secondary", 3, "href"], [1, "form-group", "p-3"], ["src", "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2618.0839154344626!2d-122.72870768432105!3d48.98996047930062!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5485c6b02ed90c57%3A0xe795e1458885dc47!2s1927+Boblett+St%2C+Blaine%2C+WA+98230%2C+USA!5e0!3m2!1sen!2sca!4v1521407241440", "allowfullscreen", "true", "width", "60%", "height", "300", "frameborder", "0", 1, "border", "border-secondary", "rounded-lg", 2, "border", "0"]], template: function ContactusComponent_Template(rf, ctx) { if (rf & 1) {
+ContactusComponent.ɵfac = function ContactusComponent_Factory(t) { return new (t || ContactusComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_common_service__WEBPACK_IMPORTED_MODULE_1__["CommonService"])); };
+ContactusComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: ContactusComponent, selectors: [["app-contactus"]], viewQuery: function ContactusComponent_Query(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵviewQuery"](_c0, true);
+    } if (rf & 2) {
+        var _t;
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.iframe = _t.first);
+    } }, decls: 41, vars: 9, consts: [[1, "container"], [1, "text-center", "p-3"], [1, "form-group"], [1, "font-52"], ["for", ""], ["title", "", 1, "color-secondary", 3, "href"], [1, "form-group", "p-3"], ["allowfullscreen", "true", "width", "60%", "height", "300", "frameborder", "0", 1, "border", "border-secondary", "rounded-lg", 2, "border", "0"], ["iframe", ""]], template: function ContactusComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 2);
@@ -50,7 +52,7 @@ ContactusComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefin
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "div", 2);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "label", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](13, "1927 Boblett Street, Blaine WA, 98230");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](13);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "div", 2);
@@ -90,27 +92,29 @@ ContactusComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefin
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](38, "div", 6);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](39, "iframe", 7);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](39, "iframe", 7, 8);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     } if (rf & 2) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](18);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate1"]("href", "tel:", ctx.OfficePhone, "", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.OfficePhone);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](13);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.commonService.WebsiteInfo.Address);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate1"]("href", "tel:", ctx.Cell, "", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate1"]("href", "tel:", ctx.commonService.WebsiteInfo.OfficePhone, "", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.Cell);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.commonService.WebsiteInfo.OfficePhone);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate1"]("href", "tel:", ctx.Fax, "", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate1"]("href", "tel:", ctx.commonService.WebsiteInfo.Cell, "", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.Fax);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.commonService.WebsiteInfo.Cell);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate1"]("href", "mailto:", ctx.ContactEmail, "", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate1"]("href", "tel:", ctx.commonService.WebsiteInfo.Fax, "", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.ContactEmail);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.commonService.WebsiteInfo.Fax);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate1"]("href", "mailto:", ctx.commonService.WebsiteInfo.ContactEmailID, "", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.commonService.WebsiteInfo.ContactEmailID);
     } }, styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3B1YmxpYy9zdGF0aWMvY29udGFjdHVzL2NvbnRhY3R1cy5jb21wb25lbnQuY3NzIn0= */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](ContactusComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
@@ -119,7 +123,104 @@ ContactusComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefin
                 templateUrl: './contactus.component.html',
                 styleUrls: ['./contactus.component.css']
             }]
-    }], function () { return [{ type: _common_service__WEBPACK_IMPORTED_MODULE_2__["CommonService"] }]; }, null); })();
+    }], function () { return [{ type: _services_common_service__WEBPACK_IMPORTED_MODULE_1__["CommonService"] }]; }, { iframe: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"],
+            args: ['iframe']
+        }] }); })();
+
+
+/***/ }),
+
+/***/ "./src/app/public/static/copyright/copyright.component.ts":
+/*!****************************************************************!*\
+  !*** ./src/app/public/static/copyright/copyright.component.ts ***!
+  \****************************************************************/
+/*! exports provided: CopyrightComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CopyrightComponent", function() { return CopyrightComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+
+
+class CopyrightComponent {
+    constructor() { }
+    ngOnInit() {
+    }
+}
+CopyrightComponent.ɵfac = function CopyrightComponent_Factory(t) { return new (t || CopyrightComponent)(); };
+CopyrightComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: CopyrightComponent, selectors: [["app-copyright"]], decls: 8, vars: 0, consts: [[1, "container"], [1, "text-center", "p-3"], [1, "form-group"], [1, "font-52"], [1, "form-group", "border", "border-none", "p-3"], ["for", ""]], template: function CopyrightComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "h2", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4, "Copyright");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "div", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "label", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](7, " Copyright content will go here... ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    } }, styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3B1YmxpYy9zdGF0aWMvY29weXJpZ2h0L2NvcHlyaWdodC5jb21wb25lbnQuY3NzIn0= */"] });
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](CopyrightComponent, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
+        args: [{
+                selector: 'app-copyright',
+                templateUrl: './copyright.component.html',
+                styleUrls: ['./copyright.component.css']
+            }]
+    }], function () { return []; }, null); })();
+
+
+/***/ }),
+
+/***/ "./src/app/public/static/disclaimer/disclaimer.component.ts":
+/*!******************************************************************!*\
+  !*** ./src/app/public/static/disclaimer/disclaimer.component.ts ***!
+  \******************************************************************/
+/*! exports provided: DisclaimerComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DisclaimerComponent", function() { return DisclaimerComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+
+
+class DisclaimerComponent {
+    constructor() { }
+    ngOnInit() {
+    }
+}
+DisclaimerComponent.ɵfac = function DisclaimerComponent_Factory(t) { return new (t || DisclaimerComponent)(); };
+DisclaimerComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: DisclaimerComponent, selectors: [["app-disclaimer"]], decls: 8, vars: 0, consts: [[1, "container"], [1, "text-center", "p-3"], [1, "form-group"], [1, "font-52"], [1, "form-group", "border", "border-none", "p-3"], ["for", ""]], template: function DisclaimerComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "h2", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4, "Disclaimer");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "div", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "label", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](7, " Disclaimer content will go here... ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    } }, styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3B1YmxpYy9zdGF0aWMvZGlzY2xhaW1lci9kaXNjbGFpbWVyLmNvbXBvbmVudC5jc3MifQ== */"] });
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](DisclaimerComponent, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
+        args: [{
+                selector: 'app-disclaimer',
+                templateUrl: './disclaimer.component.html',
+                styleUrls: ['./disclaimer.component.css']
+            }]
+    }], function () { return []; }, null); })();
 
 
 /***/ }),
@@ -143,10 +244,19 @@ class PrivacypolicyComponent {
     }
 }
 PrivacypolicyComponent.ɵfac = function PrivacypolicyComponent_Factory(t) { return new (t || PrivacypolicyComponent)(); };
-PrivacypolicyComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: PrivacypolicyComponent, selectors: [["app-privacypolicy"]], decls: 3, vars: 0, consts: [[1, "container"], [1, "text-center"], ["src", "assets/images/under-construction.gif", "alt", "Page Under Construction"]], template: function PrivacypolicyComponent_Template(rf, ctx) { if (rf & 1) {
+PrivacypolicyComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: PrivacypolicyComponent, selectors: [["app-privacypolicy"]], decls: 8, vars: 0, consts: [[1, "container"], [1, "text-center", "p-3"], [1, "form-group"], [1, "font-52"], [1, "form-group", "border", "border-none", "p-3"], ["for", ""]], template: function PrivacypolicyComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](2, "img", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "h2", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4, "Privacy Policy");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "div", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "label", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](7, " Privacy policy content will go here... ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     } }, styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3B1YmxpYy9zdGF0aWMvcHJpdmFjeXBvbGljeS9wcml2YWN5cG9saWN5LmNvbXBvbmVudC5jc3MifQ== */"] });
@@ -181,7 +291,7 @@ class ServicesComponent {
     }
 }
 ServicesComponent.ɵfac = function ServicesComponent_Factory(t) { return new (t || ServicesComponent)(); };
-ServicesComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: ServicesComponent, selectors: [["app-services"]], decls: 41, vars: 0, consts: [[1, "container"], [1, "text-center", "p-3"], [1, "form-group"], [1, "font-52"], [1, "col-lg-12"], [1, "row"], [1, "col-lg-4", "p-3"], [1, "form-group", "border", "border-secondary", "p-3"], ["for", ""], [1, "text-center"], ["href", "assets/pdffiles/Door_Express_Handling_Finishing_Installation_Instructions.pdf"], ["href", "assets/pdffiles/Door_Express_Warranty_Exceptions.pdf"]], template: function ServicesComponent_Template(rf, ctx) { if (rf & 1) {
+ServicesComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: ServicesComponent, selectors: [["app-services"]], decls: 41, vars: 0, consts: [[1, "container"], [1, "text-center", "p-3"], [1, "form-group"], [1, "font-52"], [1, "col-lg-12"], [1, "row"], [1, "col-lg-4", "p-3"], [1, "form-group", "border", "border-none", "p-3"], ["for", ""], [1, "text-center"], ["href", "assets/pdffiles/Door_Express_Handling_Finishing_Installation_Instructions.pdf"], ["href", "assets/pdffiles/Door_Express_Warranty_Exceptions.pdf"]], template: function ServicesComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 2);
@@ -283,6 +393,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _privacypolicy_privacypolicy_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./privacypolicy/privacypolicy.component */ "./src/app/public/static/privacypolicy/privacypolicy.component.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
 /* harmony import */ var _staticroute__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./staticroute */ "./src/app/public/static/staticroute.ts");
+/* harmony import */ var _disclaimer_disclaimer_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./disclaimer/disclaimer.component */ "./src/app/public/static/disclaimer/disclaimer.component.ts");
+/* harmony import */ var _copyright_copyright_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./copyright/copyright.component */ "./src/app/public/static/copyright/copyright.component.ts");
+
+
 
 
 
@@ -301,11 +415,11 @@ StaticModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjec
             _angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
             _angular_router__WEBPACK_IMPORTED_MODULE_6__["RouterModule"].forChild(_staticroute__WEBPACK_IMPORTED_MODULE_7__["StaticRoutes"])
         ]] });
-(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsetNgModuleScope"](StaticModule, { declarations: [_services_services_component__WEBPACK_IMPORTED_MODULE_2__["ServicesComponent"], _contactus_contactus_component__WEBPACK_IMPORTED_MODULE_3__["ContactusComponent"], _termsconditions_termsconditions_component__WEBPACK_IMPORTED_MODULE_4__["TermsconditionsComponent"], _privacypolicy_privacypolicy_component__WEBPACK_IMPORTED_MODULE_5__["PrivacypolicyComponent"]], imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"], _angular_router__WEBPACK_IMPORTED_MODULE_6__["RouterModule"]] }); })();
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsetNgModuleScope"](StaticModule, { declarations: [_services_services_component__WEBPACK_IMPORTED_MODULE_2__["ServicesComponent"], _contactus_contactus_component__WEBPACK_IMPORTED_MODULE_3__["ContactusComponent"], _termsconditions_termsconditions_component__WEBPACK_IMPORTED_MODULE_4__["TermsconditionsComponent"], _privacypolicy_privacypolicy_component__WEBPACK_IMPORTED_MODULE_5__["PrivacypolicyComponent"], _disclaimer_disclaimer_component__WEBPACK_IMPORTED_MODULE_8__["DisclaimerComponent"], _copyright_copyright_component__WEBPACK_IMPORTED_MODULE_9__["CopyrightComponent"]], imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"], _angular_router__WEBPACK_IMPORTED_MODULE_6__["RouterModule"]] }); })();
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](StaticModule, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
         args: [{
-                declarations: [_services_services_component__WEBPACK_IMPORTED_MODULE_2__["ServicesComponent"], _contactus_contactus_component__WEBPACK_IMPORTED_MODULE_3__["ContactusComponent"], _termsconditions_termsconditions_component__WEBPACK_IMPORTED_MODULE_4__["TermsconditionsComponent"], _privacypolicy_privacypolicy_component__WEBPACK_IMPORTED_MODULE_5__["PrivacypolicyComponent"]],
+                declarations: [_services_services_component__WEBPACK_IMPORTED_MODULE_2__["ServicesComponent"], _contactus_contactus_component__WEBPACK_IMPORTED_MODULE_3__["ContactusComponent"], _termsconditions_termsconditions_component__WEBPACK_IMPORTED_MODULE_4__["TermsconditionsComponent"], _privacypolicy_privacypolicy_component__WEBPACK_IMPORTED_MODULE_5__["PrivacypolicyComponent"], _disclaimer_disclaimer_component__WEBPACK_IMPORTED_MODULE_8__["DisclaimerComponent"], _copyright_copyright_component__WEBPACK_IMPORTED_MODULE_9__["CopyrightComponent"]],
                 imports: [
                     _angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
                     _angular_router__WEBPACK_IMPORTED_MODULE_6__["RouterModule"].forChild(_staticroute__WEBPACK_IMPORTED_MODULE_7__["StaticRoutes"])
@@ -330,6 +444,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _contactus_contactus_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./contactus/contactus.component */ "./src/app/public/static/contactus/contactus.component.ts");
 /* harmony import */ var _privacypolicy_privacypolicy_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./privacypolicy/privacypolicy.component */ "./src/app/public/static/privacypolicy/privacypolicy.component.ts");
 /* harmony import */ var _termsconditions_termsconditions_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./termsconditions/termsconditions.component */ "./src/app/public/static/termsconditions/termsconditions.component.ts");
+/* harmony import */ var _disclaimer_disclaimer_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./disclaimer/disclaimer.component */ "./src/app/public/static/disclaimer/disclaimer.component.ts");
+/* harmony import */ var _copyright_copyright_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./copyright/copyright.component */ "./src/app/public/static/copyright/copyright.component.ts");
+
+
 
 
 
@@ -339,7 +457,9 @@ const StaticRoutes = [
     { path: 'services', component: _services_services_component__WEBPACK_IMPORTED_MODULE_0__["ServicesComponent"] },
     { path: 'contactus', component: _contactus_contactus_component__WEBPACK_IMPORTED_MODULE_1__["ContactusComponent"] },
     { path: 'privacypolicy', component: _privacypolicy_privacypolicy_component__WEBPACK_IMPORTED_MODULE_2__["PrivacypolicyComponent"] },
-    { path: 'termsconditions', component: _termsconditions_termsconditions_component__WEBPACK_IMPORTED_MODULE_3__["TermsconditionsComponent"] }
+    { path: 'termsconditions', component: _termsconditions_termsconditions_component__WEBPACK_IMPORTED_MODULE_3__["TermsconditionsComponent"] },
+    { path: 'disclaimer', component: _disclaimer_disclaimer_component__WEBPACK_IMPORTED_MODULE_4__["DisclaimerComponent"] },
+    { path: 'copyright', component: _copyright_copyright_component__WEBPACK_IMPORTED_MODULE_5__["CopyrightComponent"] }
 ];
 
 

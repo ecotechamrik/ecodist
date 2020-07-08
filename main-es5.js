@@ -36,6 +36,184 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   },
 
   /***/
+  "./src/app/_models/websiteInfo.ts":
+  /*!****************************************!*\
+    !*** ./src/app/_models/websiteInfo.ts ***!
+    \****************************************/
+
+  /*! exports provided: WebsiteInfo */
+
+  /***/
+  function srcApp_modelsWebsiteInfoTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "WebsiteInfo", function () {
+      return WebsiteInfo;
+    });
+
+    var WebsiteInfo = function WebsiteInfo() {
+      _classCallCheck(this, WebsiteInfo);
+    };
+    /***/
+
+  },
+
+  /***/
+  "./src/app/_services/common.service.ts":
+  /*!*********************************************!*\
+    !*** ./src/app/_services/common.service.ts ***!
+    \*********************************************/
+
+  /*! exports provided: CommonService */
+
+  /***/
+  function srcApp_servicesCommonServiceTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "CommonService", function () {
+      return CommonService;
+    });
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _environments_environment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! ../../environments/environment */
+    "./src/environments/environment.ts");
+    /* Common Services for GLobal Variables used in the Website */
+
+
+    var CommonService = function CommonService() {
+      _classCallCheck(this, CommonService);
+
+      /* Setting the Global Variables which will be commonly used in the website */
+      this.CurrentWebsite = _environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].CurrentWebsite;
+      this.CurrentWebsiteID = _environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].CurrentWebsiteID;
+    };
+
+    CommonService.ɵfac = function CommonService_Factory(t) {
+      return new (t || CommonService)();
+    };
+
+    CommonService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+      token: CommonService,
+      factory: CommonService.ɵfac,
+      providedIn: 'root'
+    });
+    /*@__PURE__*/
+
+    (function () {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](CommonService, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
+        args: [{
+          providedIn: 'root'
+        }]
+      }], null, null);
+    })();
+    /***/
+
+  },
+
+  /***/
+  "./src/app/_services/home.service.ts":
+  /*!*******************************************!*\
+    !*** ./src/app/_services/home.service.ts ***!
+    \*******************************************/
+
+  /*! exports provided: HomeService */
+
+  /***/
+  function srcApp_servicesHomeServiceTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "HomeService", function () {
+      return HomeService;
+    });
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    /* harmony import */
+
+
+    var src_environments_environment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! src/environments/environment */
+    "./src/environments/environment.ts");
+    /* harmony import */
+
+
+    var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/common/http */
+    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
+    /* Loading Home Page Content based on Website ID */
+
+
+    var HomeService = /*#__PURE__*/function () {
+      // Constructor to Inject HttpClient Service
+      function HomeService(httpClient) {
+        _classCallCheck(this, HomeService);
+
+        this.httpClient = httpClient;
+      } //Get Website Details from Database based on given Website ID
+
+
+      _createClass(HomeService, [{
+        key: "getWebsiteDetailsByID",
+        value: function getWebsiteDetailsByID(WebsiteID) {
+          return this.httpClient.get("".concat(src_environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].WEBAPIURL, "home/").concat(WebsiteID));
+        }
+      }]);
+
+      return HomeService;
+    }();
+
+    HomeService.ɵfac = function HomeService_Factory(t) {
+      return new (t || HomeService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]));
+    };
+
+    HomeService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+      token: HomeService,
+      factory: HomeService.ɵfac,
+      providedIn: 'root'
+    });
+    /*@__PURE__*/
+
+    (function () {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](HomeService, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
+        args: [{
+          providedIn: 'root'
+        }]
+      }], function () {
+        return [{
+          type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]
+        }];
+      }, null);
+    })();
+    /***/
+
+  },
+
+  /***/
   "./src/app/app.component.ts":
   /*!**********************************!*\
     !*** ./src/app/app.component.ts ***!
@@ -63,28 +241,102 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var _public_header_header_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-    /*! ./public/_header/_header.component */
-    "./src/app/public/_header/_header.component.ts");
+    var _models_websiteInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! ./_models/websiteInfo */
+    "./src/app/_models/websiteInfo.ts");
     /* harmony import */
 
 
-    var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    var _services_common_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! ./_services/common.service */
+    "./src/app/_services/common.service.ts");
+    /* harmony import */
+
+
+    var _services_home_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! ./_services/home.service */
+    "./src/app/_services/home.service.ts");
+    /* harmony import */
+
+
+    var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! @angular/platform-browser */
+    "./node_modules/@angular/platform-browser/__ivy_ngcc__/fesm2015/platform-browser.js");
+    /* harmony import */
+
+
+    var _public_header_header_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    /*! ./public/header/header.component */
+    "./src/app/public/header/header.component.ts");
+    /* harmony import */
+
+
+    var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
     /*! @angular/router */
     "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
     /* harmony import */
 
 
-    var _public_footer_footer_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
-    /*! ./public/_footer/_footer.component */
-    "./src/app/public/_footer/_footer.component.ts");
+    var _public_footer_footer_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+    /*! ./public/footer/footer.component */
+    "./src/app/public/footer/footer.component.ts");
 
-    var AppComponent = function AppComponent() {
-      _classCallCheck(this, AppComponent);
-    };
+    var AppComponent = /*#__PURE__*/function () {
+      // Injective Common Service into Constructor to Use Global Variables.
+      function AppComponent(commonService, homeService, titleService) {
+        _classCallCheck(this, AppComponent);
+
+        this.commonService = commonService;
+        this.homeService = homeService;
+        this.titleService = titleService;
+      }
+      /* Using common data from a Common Service for each website based on Website ID */
+
+
+      _createClass(AppComponent, [{
+        key: "ngOnInit",
+        value: function ngOnInit() {
+          if (this.commonService.WebsiteInfo == undefined || this.commonService.WebsiteInfo.WebsiteID == undefined) {
+            this.commonService.WebsiteInfo = new _models_websiteInfo__WEBPACK_IMPORTED_MODULE_1__["WebsiteInfo"]();
+            this.GetWebsiteDetails();
+          }
+        } // Set Title Dynamically
+
+      }, {
+        key: "setTitle",
+        value: function setTitle() {
+          this.titleService.setTitle(this.commonService.WebsiteInfo.WebsiteName);
+        }
+        /* Get Website Details from Database based on Website ID */
+
+      }, {
+        key: "GetWebsiteDetails",
+        value: function GetWebsiteDetails() {
+          var _this = this;
+
+          this.subscription = this.homeService.getWebsiteDetailsByID(this.commonService.CurrentWebsiteID).subscribe(function (data) {
+            // Sett the Website Details into CommonService Variable to Access globally.
+            _this.commonService.WebsiteInfo = data[0];
+          }, function (err) {
+            console.log(err);
+          }, function () {
+            // Change Page Title Dynamically
+            _this.setTitle();
+          });
+        } // UnSubscribe Service to avoid Memory Leaking
+
+      }, {
+        key: "ngOnDestroy",
+        value: function ngOnDestroy() {
+          this.subscription.unsubscribe();
+        }
+      }]);
+
+      return AppComponent;
+    }();
 
     AppComponent.ɵfac = function AppComponent_Factory(t) {
-      return new (t || AppComponent)();
+      return new (t || AppComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_common_service__WEBPACK_IMPORTED_MODULE_2__["CommonService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_home_service__WEBPACK_IMPORTED_MODULE_3__["HomeService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_platform_browser__WEBPACK_IMPORTED_MODULE_4__["Title"]));
     };
 
     AppComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
@@ -94,7 +346,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       vars: 0,
       template: function AppComponent_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "app-_header");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "app-header");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "main");
 
@@ -102,10 +354,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](3, "app-_footer");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](3, "app-footer");
         }
       },
-      directives: [_public_header_header_component__WEBPACK_IMPORTED_MODULE_1__["_HeaderComponent"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterOutlet"], _public_footer_footer_component__WEBPACK_IMPORTED_MODULE_3__["_FooterComponent"]],
+      directives: [_public_header_header_component__WEBPACK_IMPORTED_MODULE_5__["HeaderComponent"], _angular_router__WEBPACK_IMPORTED_MODULE_6__["RouterOutlet"], _public_footer_footer_component__WEBPACK_IMPORTED_MODULE_7__["FooterComponent"]],
       styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuY3NzIn0= */"]
     });
     /*@__PURE__*/
@@ -118,7 +370,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           templateUrl: './app.component.html',
           styleUrls: ['./app.component.css']
         }]
-      }], null, null);
+      }], function () {
+        return [{
+          type: _services_common_service__WEBPACK_IMPORTED_MODULE_2__["CommonService"]
+        }, {
+          type: _services_home_service__WEBPACK_IMPORTED_MODULE_3__["HomeService"]
+        }, {
+          type: _angular_platform_browser__WEBPACK_IMPORTED_MODULE_4__["Title"]
+        }];
+      }, null);
     })();
     /***/
 
@@ -189,20 +449,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 
     var _public_menu_menu_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
-    /*! ./public/_menu/_menu.component */
-    "./src/app/public/_menu/_menu.component.ts");
+    /*! ./public/menu/menu.component */
+    "./src/app/public/menu/menu.component.ts");
     /* harmony import */
 
 
     var _public_header_header_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
-    /*! ./public/_header/_header.component */
-    "./src/app/public/_header/_header.component.ts");
+    /*! ./public/header/header.component */
+    "./src/app/public/header/header.component.ts");
     /* harmony import */
 
 
     var _public_footer_footer_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
-    /*! ./public/_footer/_footer.component */
-    "./src/app/public/_footer/_footer.component.ts");
+    /*! ./public/footer/footer.component */
+    "./src/app/public/footer/footer.component.ts");
 
     var AppModule = function AppModule() {
       _classCallCheck(this, AppModule);
@@ -224,7 +484,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     (function () {
       (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsetNgModuleScope"](AppModule, {
-        declarations: [_app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"], _public_pagenotfound_pagenotfound_component__WEBPACK_IMPORTED_MODULE_5__["PageNotfoundComponent"], _public_header_header_component__WEBPACK_IMPORTED_MODULE_8__["_HeaderComponent"], _public_footer_footer_component__WEBPACK_IMPORTED_MODULE_9__["_FooterComponent"], _public_menu_menu_component__WEBPACK_IMPORTED_MODULE_7__["_MenuComponent"]],
+        declarations: [_app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"], _public_pagenotfound_pagenotfound_component__WEBPACK_IMPORTED_MODULE_5__["PageNotfoundComponent"], _public_header_header_component__WEBPACK_IMPORTED_MODULE_8__["HeaderComponent"], _public_footer_footer_component__WEBPACK_IMPORTED_MODULE_9__["FooterComponent"], _public_menu_menu_component__WEBPACK_IMPORTED_MODULE_7__["MenuComponent"]],
         imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _public_home_home_module__WEBPACK_IMPORTED_MODULE_6__["HomeModule"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterModule"]]
       });
     })();
@@ -235,7 +495,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](AppModule, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"],
         args: [{
-          declarations: [_app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"], _public_pagenotfound_pagenotfound_component__WEBPACK_IMPORTED_MODULE_5__["PageNotfoundComponent"], _public_header_header_component__WEBPACK_IMPORTED_MODULE_8__["_HeaderComponent"], _public_footer_footer_component__WEBPACK_IMPORTED_MODULE_9__["_FooterComponent"], _public_menu_menu_component__WEBPACK_IMPORTED_MODULE_7__["_MenuComponent"]],
+          declarations: [_app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"], _public_pagenotfound_pagenotfound_component__WEBPACK_IMPORTED_MODULE_5__["PageNotfoundComponent"], _public_header_header_component__WEBPACK_IMPORTED_MODULE_8__["HeaderComponent"], _public_footer_footer_component__WEBPACK_IMPORTED_MODULE_9__["FooterComponent"], _public_menu_menu_component__WEBPACK_IMPORTED_MODULE_7__["MenuComponent"]],
           imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _public_home_home_module__WEBPACK_IMPORTED_MODULE_6__["HomeModule"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterModule"].forRoot(_routetable__WEBPACK_IMPORTED_MODULE_4__["Routes"], {
             useHash: true
           })],
@@ -249,23 +509,23 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   },
 
   /***/
-  "./src/app/public/_footer/_footer.component.ts":
-  /*!*****************************************************!*\
-    !*** ./src/app/public/_footer/_footer.component.ts ***!
-    \*****************************************************/
+  "./src/app/public/footer/footer.component.ts":
+  /*!***************************************************!*\
+    !*** ./src/app/public/footer/footer.component.ts ***!
+    \***************************************************/
 
-  /*! exports provided: _FooterComponent */
+  /*! exports provided: FooterComponent */
 
   /***/
-  function srcAppPublic_footer_footerComponentTs(module, __webpack_exports__, __webpack_require__) {
+  function srcAppPublicFooterFooterComponentTs(module, __webpack_exports__, __webpack_require__) {
     "use strict";
 
     __webpack_require__.r(__webpack_exports__);
     /* harmony export (binding) */
 
 
-    __webpack_require__.d(__webpack_exports__, "_FooterComponent", function () {
-      return _FooterComponent;
+    __webpack_require__.d(__webpack_exports__, "FooterComponent", function () {
+      return FooterComponent;
     });
     /* harmony import */
 
@@ -276,9 +536,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var _common_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-    /*! ../common.service */
-    "./src/app/public/common.service.ts");
+    var _services_common_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! ../../_services/common.service */
+    "./src/app/_services/common.service.ts");
     /* harmony import */
 
 
@@ -292,37 +552,26 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*! @angular/common */
     "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
 
-    var _FooterComponent = /*#__PURE__*/function () {
-      function _FooterComponent(commonService) {
-        _classCallCheck(this, _FooterComponent);
+    var FooterComponent = // Injective Common Service into Constructor to Use Global Variables.
+    function FooterComponent(commonService) {
+      _classCallCheck(this, FooterComponent);
 
-        this.commonService = commonService; // Setting Local Variables
+      this.commonService = commonService; // // Setting Local Variables
 
-        this.CurrentYear = new Date();
-      } // Settin Variables Values from the Common Service
-
-
-      _createClass(_FooterComponent, [{
-        key: "ngOnInit",
-        value: function ngOnInit() {
-          this.CurrentWebsite = this.commonService.CurrentWebsite;
-        }
-      }]);
-
-      return _FooterComponent;
-    }();
-
-    _FooterComponent.ɵfac = function _FooterComponent_Factory(t) {
-      return new (t || _FooterComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_common_service__WEBPACK_IMPORTED_MODULE_1__["CommonService"]));
+      this.CurrentYear = new Date();
     };
 
-    _FooterComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
-      type: _FooterComponent,
-      selectors: [["app-_footer"]],
+    FooterComponent.ɵfac = function FooterComponent_Factory(t) {
+      return new (t || FooterComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_common_service__WEBPACK_IMPORTED_MODULE_1__["CommonService"]));
+    };
+
+    FooterComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+      type: FooterComponent,
+      selectors: [["app-footer"]],
       decls: 62,
-      vars: 5,
-      consts: [[1, "section-seprator", 2, "margin", "4rem 0"], [1, "site-footer"], [1, "container"], [1, "footer-inner"], [1, "row"], [1, "col-12", "col-sm-12", "col-md-4", "col-lg-4", "col-xl-4"], [1, "footer-widget"], [1, "footer-widget-heading", "d-flex", "align-items-center"], ["src", "assets/images/icon_mail.png", "alt", ""], [1, "font-26"], ["href", "mailto:info@doorex.com"], ["src", "assets/images/icon_phone.png", "alt", ""], ["href", "tel:18882382687"], ["href", "tel:6046771144"], ["src", "assets/images/icon_address.png", "alt", ""], [1, "copyright"], [1, "col-12", "col-sm-12", "col-md-6", "col-lg-8", "col-xl-8"], [1, "col-12", "col-sm-12", "col-md-6", "col-lg-4", "col-xl-4", "d-md-flex", "align-items-md-center", "justify-content-md-end"], ["routerLink", "/static/copyright", "title", ""], ["routerLink", "/static/disclaimer", "title", ""], ["routerLink", "/static/privacypolicy", "title", ""]],
-      template: function _FooterComponent_Template(rf, ctx) {
+      vars: 12,
+      consts: [[1, "section-seprator", 2, "margin", "4rem 0"], [1, "site-footer"], [1, "container"], [1, "footer-inner"], [1, "row"], [1, "col-12", "col-sm-12", "col-md-4", "col-lg-4", "col-xl-4"], [1, "footer-widget"], [1, "footer-widget-heading", "d-flex", "align-items-center"], ["src", "assets/images/icon_mail.png", "alt", ""], [1, "font-26"], [3, "href"], ["src", "assets/images/icon_phone.png", "alt", ""], ["src", "assets/images/icon_address.png", "alt", ""], [1, "copyright"], [1, "col-12", "col-sm-12", "col-md-6", "col-lg-8", "col-xl-8"], [1, "col-12", "col-sm-12", "col-md-6", "col-lg-4", "col-xl-4", "d-md-flex", "align-items-md-center", "justify-content-md-end"], ["routerLink", "/static/copyright", "title", ""], ["routerLink", "/static/disclaimer", "title", ""], ["routerLink", "/static/privacypolicy", "title", ""]],
+      template: function FooterComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "section", 0);
 
@@ -362,7 +611,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "a", 10);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](15, "info@doorex.com");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](15);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -396,15 +645,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](25, "a", 12);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](25, "a", 10);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](26, "Toll Free: 1.888.238.2687");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](26);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](27, "a", 13);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](27, "a", 10);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](28, "Tel: 604.677.1144");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](28);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -420,7 +669,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](32, "figure");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](33, "img", 14);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](33, "img", 12);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -434,7 +683,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](36, "p");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](37, "Daily deliveries though ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](37, "Daily deliveries through ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](38, "br");
 
@@ -444,7 +693,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](40, "address");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](41, " Daily deliveries though ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](41, " Daily deliveries through ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](42, "br");
 
@@ -462,13 +711,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](44, "div", 15);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](44, "div", 13);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](45, "div", 2);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](46, "div", 4);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](47, "div", 16);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](47, "div", 14);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](48, "p");
 
@@ -480,13 +729,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](51, "div", 17);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](51, "div", 15);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](52, "ul");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](53, "li");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](54, "a", 18);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](54, "a", 16);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](55, "Copyright");
 
@@ -496,7 +745,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](56, "li");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](57, "a", 19);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](57, "a", 17);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](58, "Disclaimer");
 
@@ -506,7 +755,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](59, "li");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](60, "a", 20);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](60, "a", 18);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](61, "Privacy");
 
@@ -528,28 +777,52 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         }
 
         if (rf & 2) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](49);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](14);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate2"]("Copyright \xA9 ", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind2"](50, 2, ctx.CurrentYear, "yyyy"), " by ", ctx.CurrentWebsite, ". All rights reserved. Website production by Department of MIS, Door Express.");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate1"]("href", "mailto:", ctx.commonService.WebsiteInfo.ContactEmailID, "", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.commonService.WebsiteInfo.ContactEmailID);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](10);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate1"]("href", "tel:", ctx.commonService.WebsiteInfo.OfficePhone, "", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("Toll Free: ", ctx.commonService.WebsiteInfo.OfficePhone, "");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate1"]("href", "tel:", ctx.commonService.WebsiteInfo.Cell, "", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("Tel: ", ctx.commonService.WebsiteInfo.Cell, "");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](21);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate3"]("Copyright \xA9 ", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind2"](50, 9, ctx.CurrentYear, "yyyy"), " - ", ctx.commonService.WebsiteInfo.WebsiteName, ". All rights reserved. Website developed by ", ctx.commonService.WebsiteInfo.DevelopedBy, "");
         }
       },
       directives: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterLinkWithHref"]],
       pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_3__["DatePipe"]],
-      styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3B1YmxpYy9fZm9vdGVyL19mb290ZXIuY29tcG9uZW50LmNzcyJ9 */"]
+      styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3B1YmxpYy9mb290ZXIvZm9vdGVyLmNvbXBvbmVudC5jc3MifQ== */"]
     });
     /*@__PURE__*/
 
     (function () {
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](_FooterComponent, [{
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](FooterComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
-          selector: 'app-_footer',
-          templateUrl: './_footer.component.html',
-          styleUrls: ['./_footer.component.css']
+          selector: 'app-footer',
+          templateUrl: './footer.component.html',
+          styleUrls: ['./footer.component.css']
         }]
       }], function () {
         return [{
-          type: _common_service__WEBPACK_IMPORTED_MODULE_1__["CommonService"]
+          type: _services_common_service__WEBPACK_IMPORTED_MODULE_1__["CommonService"]
         }];
       }, null);
     })();
@@ -558,23 +831,23 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   },
 
   /***/
-  "./src/app/public/_header/_header.component.ts":
-  /*!*****************************************************!*\
-    !*** ./src/app/public/_header/_header.component.ts ***!
-    \*****************************************************/
+  "./src/app/public/header/header.component.ts":
+  /*!***************************************************!*\
+    !*** ./src/app/public/header/header.component.ts ***!
+    \***************************************************/
 
-  /*! exports provided: _HeaderComponent */
+  /*! exports provided: HeaderComponent */
 
   /***/
-  function srcAppPublic_header_headerComponentTs(module, __webpack_exports__, __webpack_require__) {
+  function srcAppPublicHeaderHeaderComponentTs(module, __webpack_exports__, __webpack_require__) {
     "use strict";
 
     __webpack_require__.r(__webpack_exports__);
     /* harmony export (binding) */
 
 
-    __webpack_require__.d(__webpack_exports__, "_HeaderComponent", function () {
-      return _HeaderComponent;
+    __webpack_require__.d(__webpack_exports__, "HeaderComponent", function () {
+      return HeaderComponent;
     });
     /* harmony import */
 
@@ -585,9 +858,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var _common_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-    /*! ../common.service */
-    "./src/app/public/common.service.ts");
+    var _services_common_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! ../../_services/common.service */
+    "./src/app/_services/common.service.ts");
     /* harmony import */
 
 
@@ -598,8 +871,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 
     var _menu_menu_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
-    /*! ../_menu/_menu.component */
-    "./src/app/public/_menu/_menu.component.ts");
+    /*! ../menu/menu.component */
+    "./src/app/public/menu/menu.component.ts");
     /* harmony import */
 
 
@@ -607,36 +880,26 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*! @angular/common */
     "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
 
-    var _HeaderComponent = /*#__PURE__*/function () {
-      /* Using Cell No. and Office Phone no. from a Common Service */
-      function _HeaderComponent(commonService) {
-        _classCallCheck(this, _HeaderComponent);
+    var HeaderComponent = // Injective Common Service into Constructor to Use Global Variables.
+    function HeaderComponent(commonService) {
+      _classCallCheck(this, HeaderComponent);
 
-        this.commonService = commonService;
-        this.CurrentDate = new Date();
-        this.Cell = commonService.Cell;
-        this.OfficePhone = commonService.OfficePhone;
-      }
+      this.commonService = commonService; // Setting Local Variables
 
-      _createClass(_HeaderComponent, [{
-        key: "ngOnInit",
-        value: function ngOnInit() {}
-      }]);
-
-      return _HeaderComponent;
-    }();
-
-    _HeaderComponent.ɵfac = function _HeaderComponent_Factory(t) {
-      return new (t || _HeaderComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_common_service__WEBPACK_IMPORTED_MODULE_1__["CommonService"]));
+      this.CurrentDate = new Date();
     };
 
-    _HeaderComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
-      type: _HeaderComponent,
-      selectors: [["app-_header"]],
+    HeaderComponent.ɵfac = function HeaderComponent_Factory(t) {
+      return new (t || HeaderComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_common_service__WEBPACK_IMPORTED_MODULE_1__["CommonService"]));
+    };
+
+    HeaderComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+      type: HeaderComponent,
+      selectors: [["app-header"]],
       decls: 65,
-      vars: 13,
-      consts: [[1, "site-header"], [1, "header-top", "light-bg"], [1, "container"], [1, "d-flex", "justify-content-between", "align-items-center"], [1, "left-content-details", "d-none", "d-sm-block"], ["src", "assets/images/icon-date.png", "alt", "Date"], ["src", "assets/images/icon-call.png", "alt", ""], ["title", "", 1, "color-secondary", 3, "href"], [1, "navbar-brand", "d-flex", "justify-content-start", "justify-content-sm-center"], ["routerLink", "", 1, "brand"], ["src", "assets/images/logo.png", "alt", ""], [1, "right-items", "d-flex", "justify-content-end"], [1, "search-wrapper"], [1, "search-toggler", "font-20"], ["aria-hidden", "true", 1, "fa", "fa-search"], [1, "search-form"], ["type", "text", "placeholder", "Search Keyword Here", 1, "form-control"], ["type", "submit", 1, "cust_btn", "cust_btn-primary", "cust_btn-sm"], ["routerLink", "/user/login", "title", "", 1, "color-secondary", "font-20"], ["aria-hidden", "true", 1, "fa", "fa-user"], [1, "cart-notifiction", "font-20"], ["aria-hidden", "true", 1, "fa", "fa-shopping-cart"], [1, "notify-counter"], [1, "cart-quick-shop-dropdown", "d-none"], [1, "cart-quick-list-wrapper"], [1, "product-discard"], ["aria-hidden", "true", 1, "fa", "fa-times"], [1, "product-image"], [1, "product-desc"], ["type", ""], [1, "d-lg-none"], [1, "navbar-toggler", "font-20"], ["aria-hidden", "true", 1, "fa", "fa-align-right"], [1, "header-nav"], [1, "right-navbar"], [1, "navbar-wrapper", "d-md-flex", "justify-content-md-center"], [1, "left-content-details", "d-sm-none"], [1, "overlay"]],
-      template: function _HeaderComponent_Template(rf, ctx) {
+      vars: 14,
+      consts: [[1, "site-header"], [1, "header-top", "light-bg"], [1, "container"], [1, "d-flex", "justify-content-between", "align-items-center"], [1, "left-content-details", "d-none", "d-sm-block"], ["src", "assets/images/icon-date.png", "alt", "Date"], ["src", "assets/images/icon-call.png", "alt", ""], ["title", "", 1, "color-secondary", 3, "href"], [1, "navbar-brand", "d-flex", "justify-content-start", "justify-content-sm-center"], ["routerLink", "", 1, "brand"], ["alt", "", 3, "src"], [1, "right-items", "d-flex", "justify-content-end"], [1, "search-wrapper"], [1, "search-toggler", "font-20"], ["aria-hidden", "true", 1, "fa", "fa-search"], [1, "search-form"], ["type", "text", "placeholder", "Search Keyword Here", 1, "form-control"], ["type", "submit", 1, "cust_btn", "cust_btn-primary", "cust_btn-sm"], ["routerLink", "/user/login", "title", "", 1, "color-secondary", "font-20"], ["aria-hidden", "true", 1, "fa", "fa-user"], [1, "cart-notifiction", "font-20"], ["aria-hidden", "true", 1, "fa", "fa-shopping-cart"], [1, "notify-counter"], [1, "cart-quick-shop-dropdown", "d-none"], [1, "cart-quick-list-wrapper"], [1, "product-discard"], ["aria-hidden", "true", 1, "fa", "fa-times"], [1, "product-image"], [1, "product-desc"], ["type", ""], [1, "d-lg-none"], [1, "navbar-toggler", "font-20"], ["aria-hidden", "true", 1, "fa", "fa-align-right"], [1, "header-nav"], [1, "right-navbar"], [1, "navbar-wrapper", "d-md-flex", "justify-content-md-center"], [1, "left-content-details", "d-sm-none"], [1, "overlay"]],
+      template: function HeaderComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "header", 0);
 
@@ -794,7 +1057,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](50, "div", 35);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](51, "app-_menu");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](51, "app-menu");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](52, "ul", 36);
 
@@ -846,62 +1109,66 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         if (rf & 2) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](8);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind2"](9, 10, ctx.CurrentDate, "EEEE, MMM d, yyyy"));
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind2"](9, 11, ctx.CurrentDate, "EEEE, MMM d, yyyy"));
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate1"]("href", "tel:", ctx.OfficePhone, "", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate1"]("href", "tel:", ctx.commonService.WebsiteInfo.OfficePhone, "", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.OfficePhone);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.commonService.WebsiteInfo.OfficePhone);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate1"]("href", "tel:", ctx.Cell, "", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate1"]("href", "tel:", ctx.commonService.WebsiteInfo.Cell, "", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.Cell);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.commonService.WebsiteInfo.Cell);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](40);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate1"]("src", "assets/images/", ctx.commonService.CurrentWebsite, ".png", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](37);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.CurrentDate);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate1"]("href", "tel:", ctx.OfficePhone, "", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate1"]("href", "tel:", ctx.commonService.WebsiteInfo.OfficePhone, "", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.OfficePhone);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.commonService.WebsiteInfo.OfficePhone);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate1"]("href", "tel:", ctx.Cell, "", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate1"]("href", "tel:", ctx.commonService.WebsiteInfo.Cell, "", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.Cell);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.commonService.WebsiteInfo.Cell);
         }
       },
-      directives: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterLinkWithHref"], _menu_menu_component__WEBPACK_IMPORTED_MODULE_3__["_MenuComponent"]],
+      directives: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterLinkWithHref"], _menu_menu_component__WEBPACK_IMPORTED_MODULE_3__["MenuComponent"]],
       pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_4__["DatePipe"]],
-      styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3B1YmxpYy9faGVhZGVyL19oZWFkZXIuY29tcG9uZW50LmNzcyJ9 */"]
+      styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3B1YmxpYy9oZWFkZXIvaGVhZGVyLmNvbXBvbmVudC5jc3MifQ== */"]
     });
     /*@__PURE__*/
 
     (function () {
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](_HeaderComponent, [{
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](HeaderComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
-          selector: 'app-_header',
-          templateUrl: './_header.component.html',
-          styleUrls: ['./_header.component.css']
+          selector: 'app-header',
+          templateUrl: './header.component.html',
+          styleUrls: ['./header.component.css']
         }]
       }], function () {
         return [{
-          type: _common_service__WEBPACK_IMPORTED_MODULE_1__["CommonService"]
+          type: _services_common_service__WEBPACK_IMPORTED_MODULE_1__["CommonService"]
         }];
       }, null);
     })();
@@ -910,255 +1177,23 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   },
 
   /***/
-  "./src/app/public/_menu/_menu.component.ts":
-  /*!*************************************************!*\
-    !*** ./src/app/public/_menu/_menu.component.ts ***!
-    \*************************************************/
+  "./src/app/public/home/doorslider/doorslider.component.ts":
+  /*!****************************************************************!*\
+    !*** ./src/app/public/home/doorslider/doorslider.component.ts ***!
+    \****************************************************************/
 
-  /*! exports provided: _MenuComponent */
+  /*! exports provided: DoorsliderComponent */
 
   /***/
-  function srcAppPublic_menu_menuComponentTs(module, __webpack_exports__, __webpack_require__) {
+  function srcAppPublicHomeDoorsliderDoorsliderComponentTs(module, __webpack_exports__, __webpack_require__) {
     "use strict";
 
     __webpack_require__.r(__webpack_exports__);
     /* harmony export (binding) */
 
 
-    __webpack_require__.d(__webpack_exports__, "_MenuComponent", function () {
-      return _MenuComponent;
-    });
-    /* harmony import */
-
-
-    var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! @angular/core */
-    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
-    /* harmony import */
-
-
-    var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-    /*! @angular/router */
-    "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
-
-    var _MenuComponent = /*#__PURE__*/function () {
-      function _MenuComponent() {
-        _classCallCheck(this, _MenuComponent);
-      }
-
-      _createClass(_MenuComponent, [{
-        key: "ngOnInit",
-        value: function ngOnInit() {}
-      }]);
-
-      return _MenuComponent;
-    }();
-
-    _MenuComponent.ɵfac = function _MenuComponent_Factory(t) {
-      return new (t || _MenuComponent)();
-    };
-
-    _MenuComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
-      type: _MenuComponent,
-      selectors: [["app-_menu"]],
-      decls: 25,
-      vars: 0,
-      consts: [[1, "nav", "d-md-flex", "justify-content-md-center"], ["routerLink", "", 1, "active"], ["routerLink", "/interior"], ["routerLink", "/exterior"], ["routerLink", "/prehanging"], ["routerLink", "/partshardware"], ["routerLink", "/designpricetools"], ["routerLink", "/static/services"], ["routerLink", "/static/contactus"]],
-      template: function _MenuComponent_Template(rf, ctx) {
-        if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "ul", 0);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "li");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "a", 1);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, "Home");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "li");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "a", 2);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, "Interior Doors");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "li");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "a", 3);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](9, "Exterior Doors");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "li");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "a", 4);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](12, "Prehanging");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "li");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "a", 5);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](15, "Parts and Hardware");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](16, "li");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](17, "a", 6);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](18, "Design and Price Tool");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](19, "li");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](20, "a", 7);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](21, "Services");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](22, "li");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](23, "a", 8);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](24, "Contact Us");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        }
-      },
-      directives: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterLinkWithHref"]],
-      styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3B1YmxpYy9fbWVudS9fbWVudS5jb21wb25lbnQuY3NzIn0= */"]
-    });
-    /*@__PURE__*/
-
-    (function () {
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](_MenuComponent, [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
-        args: [{
-          selector: 'app-_menu',
-          templateUrl: './_menu.component.html',
-          styleUrls: ['./_menu.component.css']
-        }]
-      }], function () {
-        return [];
-      }, null);
-    })();
-    /***/
-
-  },
-
-  /***/
-  "./src/app/public/common.service.ts":
-  /*!******************************************!*\
-    !*** ./src/app/public/common.service.ts ***!
-    \******************************************/
-
-  /*! exports provided: CommonService */
-
-  /***/
-  function srcAppPublicCommonServiceTs(module, __webpack_exports__, __webpack_require__) {
-    "use strict";
-
-    __webpack_require__.r(__webpack_exports__);
-    /* harmony export (binding) */
-
-
-    __webpack_require__.d(__webpack_exports__, "CommonService", function () {
-      return CommonService;
-    });
-    /* harmony import */
-
-
-    var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! @angular/core */
-    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
-    /* harmony import */
-
-
-    var _environments_environment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-    /*! ../../environments/environment */
-    "./src/environments/environment.ts");
-    /* Common Services for GLobal Variables used in the Website */
-
-
-    var CommonService = function CommonService() {
-      _classCallCheck(this, CommonService);
-
-      /* Setting the Global Variables which will be commonly used in the website */
-      this.Cell = _environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].Cell;
-      this.OfficePhone = _environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].OfficePhone;
-      this.Fax = _environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].Fax;
-      this.ContactEmail = _environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].ContactEmail;
-      this.CurrentWebsite = _environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].WebsiteName;
-      this.DevelopedBy = _environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].DevelopedBy;
-    };
-
-    CommonService.ɵfac = function CommonService_Factory(t) {
-      return new (t || CommonService)();
-    };
-
-    CommonService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
-      token: CommonService,
-      factory: CommonService.ɵfac,
-      providedIn: 'root'
-    });
-    /*@__PURE__*/
-
-    (function () {
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](CommonService, [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
-        args: [{
-          providedIn: 'root'
-        }]
-      }], null, null);
-    })();
-    /***/
-
-  },
-
-  /***/
-  "./src/app/public/home/_doorslider/_doorslider.component.ts":
-  /*!******************************************************************!*\
-    !*** ./src/app/public/home/_doorslider/_doorslider.component.ts ***!
-    \******************************************************************/
-
-  /*! exports provided: _DoorsliderComponent */
-
-  /***/
-  function srcAppPublicHome_doorslider_doorsliderComponentTs(module, __webpack_exports__, __webpack_require__) {
-    "use strict";
-
-    __webpack_require__.r(__webpack_exports__);
-    /* harmony export (binding) */
-
-
-    __webpack_require__.d(__webpack_exports__, "_DoorsliderComponent", function () {
-      return _DoorsliderComponent;
+    __webpack_require__.d(__webpack_exports__, "DoorsliderComponent", function () {
+      return DoorsliderComponent;
     });
     /* harmony import */
 
@@ -1167,33 +1202,24 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*! @angular/core */
     "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
 
-    var _DoorsliderComponent = /*#__PURE__*/function () {
-      function _DoorsliderComponent() {
-        _classCallCheck(this, _DoorsliderComponent);
-      }
-
-      _createClass(_DoorsliderComponent, [{
-        key: "ngOnInit",
-        value: function ngOnInit() {}
-      }]);
-
-      return _DoorsliderComponent;
-    }();
-
-    _DoorsliderComponent.ɵfac = function _DoorsliderComponent_Factory(t) {
-      return new (t || _DoorsliderComponent)();
+    var DoorsliderComponent = function DoorsliderComponent() {
+      _classCallCheck(this, DoorsliderComponent);
     };
 
-    _DoorsliderComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
-      type: _DoorsliderComponent,
-      selectors: [["app-_doorslider"]],
+    DoorsliderComponent.ɵfac = function DoorsliderComponent_Factory(t) {
+      return new (t || DoorsliderComponent)();
+    };
+
+    DoorsliderComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+      type: DoorsliderComponent,
+      selectors: [["app-doorslider"]],
       inputs: {
         TabHeading: ["tabHeading", "TabHeading"]
       },
       decls: 103,
       vars: 1,
       consts: [["role", "tablist", 1, "nav", "nav-tabs", "d-flex", "justify-content-center"], [1, "nav-item"], ["data-toggle", "tab", "href", "#all", "role", "tab", 1, "nav-link", "active"], [1, "tab-content"], ["id", "all", "role", "tabpanel", 1, "tab-pane", "active"], [1, "product-slider", "product-block-wrapper"], [1, "prodcut-item"], [1, "porduct-image", "bg-light"], [1, "offer-lable", "font-16", "color-primary"], ["src", "assets/images/door1.png", "alt", ""], ["routerLink", "/cart/ordernow", "title", "", 1, "cust_btn", "cust_btn-primary", "cust_btn-sm", "cart-btn"], [1, "product-content", "d-flex", "justify-content-between", "flex-wrap"], [1, "product-name"], ["routerLink", "/cart/ordernow", 1, "font-22", "color-secondary"], [1, "color-gray", "font-14"], [1, "product-price"], [1, "font-26", "color-primary"], ["src", "assets/images/door2.png", "alt", ""], ["href", "#", "title", "", 1, "cust_btn", "cust_btn-primary", "cust_btn-sm", "cart-btn"], ["href", "#", 1, "font-22", "color-secondary"], ["src", "assets/images/door3.png", "alt", ""], ["src", "assets/images/door4.png", "alt", ""], ["id", "interior", "role", "tabpanel", 1, "tab-pane"], [1, "color-primary", "font-18", "bg-light", "text-center", "p-4"], ["id", "exterior", "role", "tabpanel", 1, "tab-pane"], ["id", "parthardware", "role", "tabpanel", 1, "tab-pane"], [1, "section-seprator", 2, "margin", "4rem 0"]],
-      template: function _DoorsliderComponent_Template(rf, ctx) {
+      template: function DoorsliderComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
 
@@ -1544,354 +1570,24 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.TabHeading);
         }
       },
-      styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3B1YmxpYy9ob21lL19kb29yc2xpZGVyL19kb29yc2xpZGVyLmNvbXBvbmVudC5jc3MifQ== */"]
+      styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3B1YmxpYy9ob21lL2Rvb3JzbGlkZXIvZG9vcnNsaWRlci5jb21wb25lbnQuY3NzIn0= */"]
     });
     /*@__PURE__*/
 
     (function () {
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](_DoorsliderComponent, [{
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](DoorsliderComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
-          selector: 'app-_doorslider',
-          templateUrl: './_doorslider.component.html',
-          styleUrls: ['./_doorslider.component.css']
+          selector: 'app-doorslider',
+          templateUrl: './doorslider.component.html',
+          styleUrls: ['./doorslider.component.css']
         }]
-      }], function () {
-        return [];
-      }, {
+      }], null, {
         TabHeading: [{
           type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"],
           args: ['tabHeading']
         }]
       });
-    })();
-    /***/
-
-  },
-
-  /***/
-  "./src/app/public/home/_homebanner/_homebanner.component.ts":
-  /*!******************************************************************!*\
-    !*** ./src/app/public/home/_homebanner/_homebanner.component.ts ***!
-    \******************************************************************/
-
-  /*! exports provided: _HomebannerComponent */
-
-  /***/
-  function srcAppPublicHome_homebanner_homebannerComponentTs(module, __webpack_exports__, __webpack_require__) {
-    "use strict";
-
-    __webpack_require__.r(__webpack_exports__);
-    /* harmony export (binding) */
-
-
-    __webpack_require__.d(__webpack_exports__, "_HomebannerComponent", function () {
-      return _HomebannerComponent;
-    });
-    /* harmony import */
-
-
-    var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! @angular/core */
-    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
-
-    var _HomebannerComponent = /*#__PURE__*/function () {
-      function _HomebannerComponent() {
-        _classCallCheck(this, _HomebannerComponent);
-      }
-
-      _createClass(_HomebannerComponent, [{
-        key: "ngOnInit",
-        value: function ngOnInit() {}
-      }]);
-
-      return _HomebannerComponent;
-    }();
-
-    _HomebannerComponent.ɵfac = function _HomebannerComponent_Factory(t) {
-      return new (t || _HomebannerComponent)();
-    };
-
-    _HomebannerComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
-      type: _HomebannerComponent,
-      selectors: [["app-_homebanner"]],
-      decls: 42,
-      vars: 0,
-      consts: [[1, "hero-wrapper"], [1, "container"], [1, "hero-slider-wrapper"], [1, "slide-item"], [1, "caption"], [1, "font-24", "color-primary"], [1, "font-80"], ["href", "#", "title", "", 1, "cust_btn", "cust_btn-primary", "cust_btn-sm"], [1, "product-wrapper"], ["src", "assets/images/doors.png"]],
-      template: function _HomebannerComponent_Template(rf, ctx) {
-        if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "section", 0);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 2);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "li", 3);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "div", 4);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "span", 5);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, "Eco Tech Doors");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "h1", 6);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8, "Doors Seattle");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "p");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](10, "Quality Residential and Commercial Doors for Seattle");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "a", 7);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](12, "Shop New Collection");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "div", 8);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "figure");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](15, "img", 9);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](16, "li", 3);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](17, "div", 4);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](18, "span", 5);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](19, "Eco Tech Doors");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](20, "h1", 6);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](21, "Doors Seattle");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](22, "p");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](23, "Quality Residential and Commercial Doors for Seattle");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](24, "a", 7);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](25, "Shop New Collection");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](26, "div", 8);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](27, "figure");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](28, "img", 9);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](29, "li", 3);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](30, "div", 4);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](31, "span", 5);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](32, "Eco Tech Doors");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](33, "h1", 6);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](34, "Doors Seattle");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](35, "p");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](36, "Quality Residential and Commercial Doors for Seattle");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](37, "a", 7);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](38, "Shop New Collection");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](39, "div", 8);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](40, "figure");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](41, "img", 9);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        }
-      },
-      styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3B1YmxpYy9ob21lL19ob21lYmFubmVyL19ob21lYmFubmVyLmNvbXBvbmVudC5jc3MifQ== */"]
-    });
-    /*@__PURE__*/
-
-    (function () {
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](_HomebannerComponent, [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
-        args: [{
-          selector: 'app-_homebanner',
-          templateUrl: './_homebanner.component.html',
-          styleUrls: ['./_homebanner.component.css']
-        }]
-      }], function () {
-        return [];
-      }, null);
-    })();
-    /***/
-
-  },
-
-  /***/
-  "./src/app/public/home/_websiteintro/_websiteintro.component.ts":
-  /*!**********************************************************************!*\
-    !*** ./src/app/public/home/_websiteintro/_websiteintro.component.ts ***!
-    \**********************************************************************/
-
-  /*! exports provided: _WebsiteintroComponent */
-
-  /***/
-  function srcAppPublicHome_websiteintro_websiteintroComponentTs(module, __webpack_exports__, __webpack_require__) {
-    "use strict";
-
-    __webpack_require__.r(__webpack_exports__);
-    /* harmony export (binding) */
-
-
-    __webpack_require__.d(__webpack_exports__, "_WebsiteintroComponent", function () {
-      return _WebsiteintroComponent;
-    });
-    /* harmony import */
-
-
-    var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! @angular/core */
-    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
-
-    var _WebsiteintroComponent = /*#__PURE__*/function () {
-      function _WebsiteintroComponent() {
-        _classCallCheck(this, _WebsiteintroComponent);
-      }
-
-      _createClass(_WebsiteintroComponent, [{
-        key: "ngOnInit",
-        value: function ngOnInit() {}
-      }]);
-
-      return _WebsiteintroComponent;
-    }();
-
-    _WebsiteintroComponent.ɵfac = function _WebsiteintroComponent_Factory(t) {
-      return new (t || _WebsiteintroComponent)();
-    };
-
-    _WebsiteintroComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
-      type: _WebsiteintroComponent,
-      selectors: [["app-_websiteintro"]],
-      decls: 14,
-      vars: 0,
-      consts: [[1, "our-product-section"], [1, "container"], [1, "border-heading", "text-center"], [1, "widget", 2, "margin", "0"], [1, "heading-label", "color-gray", "font-14"], [1, "line"], [1, "widget-inner"], [1, "font-52"], ["href", "#", "title", "", 1, "cust_btn", "cust_btn-primary", "cust_btn-lg"]],
-      template: function _WebsiteintroComponent_Template(rf, ctx) {
-        if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "section", 0);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 2);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "div", 3);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "span", 4);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5, " Quality Residential and Commercial Doors for Seattle ");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](6, "div", 5);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "div", 6);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "h2", 7);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](9, "Welcome To Doors Seattle");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "p");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](11, "What we are really good at however is service. Our professionally trained designers are experts in doors and thier use in residential applications. The team can walk you through the selection process, the opening requirments, the finishing, installation and use of each of our products. Our primary goal is 100 percent accuracy at the job site. Our people are dedicated to making that happen for you. ");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "a", 8);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](13, "Read More");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        }
-      },
-      styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3B1YmxpYy9ob21lL193ZWJzaXRlaW50cm8vX3dlYnNpdGVpbnRyby5jb21wb25lbnQuY3NzIn0= */"]
-    });
-    /*@__PURE__*/
-
-    (function () {
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](_WebsiteintroComponent, [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
-        args: [{
-          selector: 'app-_websiteintro',
-          templateUrl: './_websiteintro.component.html',
-          styleUrls: ['./_websiteintro.component.css']
-        }]
-      }], function () {
-        return [];
-      }, null);
     })();
     /***/
 
@@ -1931,25 +1627,31 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var _homebanner_homebanner_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-    /*! ./_homebanner/_homebanner.component */
-    "./src/app/public/home/_homebanner/_homebanner.component.ts");
+    var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/common/http */
+    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
     /* harmony import */
 
 
-    var _websiteintro_websiteintro_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
-    /*! ./_websiteintro/_websiteintro.component */
-    "./src/app/public/home/_websiteintro/_websiteintro.component.ts");
+    var _homebanner_homebanner_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! ./homebanner/homebanner.component */
+    "./src/app/public/home/homebanner/homebanner.component.ts");
     /* harmony import */
 
 
     var _doorslider_doorslider_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
-    /*! ./_doorslider/_doorslider.component */
-    "./src/app/public/home/_doorslider/_doorslider.component.ts");
+    /*! ./doorslider/doorslider.component */
+    "./src/app/public/home/doorslider/doorslider.component.ts");
     /* harmony import */
 
 
-    var _mainpage_mainpage_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    var _websiteintro_websiteintro_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    /*! ./websiteintro/websiteintro.component */
+    "./src/app/public/home/websiteintro/websiteintro.component.ts");
+    /* harmony import */
+
+
+    var _mainpage_mainpage_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
     /*! ./mainpage/mainpage.component */
     "./src/app/public/home/mainpage/mainpage.component.ts");
     /* Home Module to load Home page component and its internal dependent components */
@@ -1966,13 +1668,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       factory: function HomeModule_Factory(t) {
         return new (t || HomeModule)();
       },
-      imports: [[_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"]]]
+      imports: [[_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClientModule"]]]
     });
 
     (function () {
       (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsetNgModuleScope"](HomeModule, {
-        declarations: [_homebanner_homebanner_component__WEBPACK_IMPORTED_MODULE_2__["_HomebannerComponent"], _websiteintro_websiteintro_component__WEBPACK_IMPORTED_MODULE_3__["_WebsiteintroComponent"], _doorslider_doorslider_component__WEBPACK_IMPORTED_MODULE_4__["_DoorsliderComponent"], _mainpage_mainpage_component__WEBPACK_IMPORTED_MODULE_5__["MainpageComponent"]],
-        imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"]]
+        declarations: [_homebanner_homebanner_component__WEBPACK_IMPORTED_MODULE_3__["HomebannerComponent"], _doorslider_doorslider_component__WEBPACK_IMPORTED_MODULE_4__["DoorsliderComponent"], _websiteintro_websiteintro_component__WEBPACK_IMPORTED_MODULE_5__["WebsiteintroComponent"], _mainpage_mainpage_component__WEBPACK_IMPORTED_MODULE_6__["MainpageComponent"]],
+        imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClientModule"]]
       });
     })();
     /*@__PURE__*/
@@ -1982,10 +1684,260 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](HomeModule, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
         args: [{
-          declarations: [_homebanner_homebanner_component__WEBPACK_IMPORTED_MODULE_2__["_HomebannerComponent"], _websiteintro_websiteintro_component__WEBPACK_IMPORTED_MODULE_3__["_WebsiteintroComponent"], _doorslider_doorslider_component__WEBPACK_IMPORTED_MODULE_4__["_DoorsliderComponent"], _mainpage_mainpage_component__WEBPACK_IMPORTED_MODULE_5__["MainpageComponent"]],
-          imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"]]
+          declarations: [_homebanner_homebanner_component__WEBPACK_IMPORTED_MODULE_3__["HomebannerComponent"], _doorslider_doorslider_component__WEBPACK_IMPORTED_MODULE_4__["DoorsliderComponent"], _websiteintro_websiteintro_component__WEBPACK_IMPORTED_MODULE_5__["WebsiteintroComponent"], _mainpage_mainpage_component__WEBPACK_IMPORTED_MODULE_6__["MainpageComponent"]],
+          imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClientModule"]]
         }]
       }], null, null);
+    })();
+    /***/
+
+  },
+
+  /***/
+  "./src/app/public/home/homebanner/homebanner.component.ts":
+  /*!****************************************************************!*\
+    !*** ./src/app/public/home/homebanner/homebanner.component.ts ***!
+    \****************************************************************/
+
+  /*! exports provided: HomebannerComponent */
+
+  /***/
+  function srcAppPublicHomeHomebannerHomebannerComponentTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "HomebannerComponent", function () {
+      return HomebannerComponent;
+    });
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _services_common_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! ../../../_services/common.service */
+    "./src/app/_services/common.service.ts");
+
+    var HomebannerComponent = // Injective Common Service into Constructor to Use Global Variables.
+    function HomebannerComponent(commonService) {
+      _classCallCheck(this, HomebannerComponent);
+
+      this.commonService = commonService;
+    };
+
+    HomebannerComponent.ɵfac = function HomebannerComponent_Factory(t) {
+      return new (t || HomebannerComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_common_service__WEBPACK_IMPORTED_MODULE_1__["CommonService"]));
+    };
+
+    HomebannerComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+      type: HomebannerComponent,
+      selectors: [["app-homebanner"]],
+      decls: 42,
+      vars: 9,
+      consts: [[1, "hero-wrapper"], [1, "container"], [1, "hero-slider-wrapper"], [1, "slide-item"], [1, "caption"], [1, "font-24", "color-primary"], [1, "font-80"], ["href", "#", "title", "", 1, "cust_btn", "cust_btn-primary", "cust_btn-sm"], [1, "product-wrapper"], ["src", "assets/images/doors.png"]],
+      template: function HomebannerComponent_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "section", 0);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "li", 3);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "div", 4);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "span", 5);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "h1", 6);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "p");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](10);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "a", 7);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](12, "Shop New Collection");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "div", 8);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "figure");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](15, "img", 9);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](16, "li", 3);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](17, "div", 4);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](18, "span", 5);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](19);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](20, "h1", 6);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](21);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](22, "p");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](23);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](24, "a", 7);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](25, "Shop New Collection");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](26, "div", 8);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](27, "figure");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](28, "img", 9);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](29, "li", 3);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](30, "div", 4);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](31, "span", 5);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](32);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](33, "h1", 6);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](34);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](35, "p");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](36);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](37, "a", 7);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](38, "Shop New Collection");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](39, "div", 8);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](40, "figure");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](41, "img", 9);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.commonService.WebsiteInfo.CompanyName);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.commonService.WebsiteInfo.WebsiteBannerTitle);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.commonService.WebsiteInfo.WebsiteBannerTagLine);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](9);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.commonService.WebsiteInfo.CompanyName);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.commonService.WebsiteInfo.WebsiteBannerTitle);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.commonService.WebsiteInfo.WebsiteBannerTagLine);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](9);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.commonService.WebsiteInfo.CompanyName);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.commonService.WebsiteInfo.WebsiteBannerTitle);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.commonService.WebsiteInfo.WebsiteBannerTagLine);
+        }
+      },
+      styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3B1YmxpYy9ob21lL2hvbWViYW5uZXIvaG9tZWJhbm5lci5jb21wb25lbnQuY3NzIn0= */"]
+    });
+    /*@__PURE__*/
+
+    (function () {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](HomebannerComponent, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
+        args: [{
+          selector: 'app-homebanner',
+          templateUrl: './homebanner.component.html',
+          styleUrls: ['./homebanner.component.css']
+        }]
+      }], function () {
+        return [{
+          type: _services_common_service__WEBPACK_IMPORTED_MODULE_1__["CommonService"]
+        }];
+      }, null);
     })();
     /***/
 
@@ -2026,20 +1978,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 
     var _homebanner_homebanner_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-    /*! ../_homebanner/_homebanner.component */
-    "./src/app/public/home/_homebanner/_homebanner.component.ts");
+    /*! ../homebanner/homebanner.component */
+    "./src/app/public/home/homebanner/homebanner.component.ts");
     /* harmony import */
 
 
     var _websiteintro_websiteintro_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
-    /*! ../_websiteintro/_websiteintro.component */
-    "./src/app/public/home/_websiteintro/_websiteintro.component.ts");
+    /*! ../websiteintro/websiteintro.component */
+    "./src/app/public/home/websiteintro/websiteintro.component.ts");
     /* harmony import */
 
 
     var _doorslider_doorslider_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
-    /*! ../_doorslider/_doorslider.component */
-    "./src/app/public/home/_doorslider/_doorslider.component.ts");
+    /*! ../doorslider/doorslider.component */
+    "./src/app/public/home/doorslider/doorslider.component.ts");
     /* Import jQuery Function to Re-load Home Page jQuery Effects on Route Navigation Changes  */
 
 
@@ -2089,9 +2041,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       consts: [[1, "product-section"], [1, "container"], [1, "border-heading", "text-center", "font-52"], [3, "tabHeading"]],
       template: function MainpageComponent_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "app-_homebanner");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "app-homebanner");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "app-_websiteintro");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "app-websiteintro");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "section", 0);
 
@@ -2103,25 +2055,25 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](6, "app-_doorslider", 3);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](6, "app-doorslider", 3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](7, "app-_doorslider", 3);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](7, "app-doorslider", 3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](8, "app-_doorslider", 3);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](8, "app-doorslider", 3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](9, "app-_doorslider", 3);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](9, "app-doorslider", 3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](10, "app-_doorslider", 3);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](10, "app-doorslider", 3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](11, "app-_doorslider", 3);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](11, "app-doorslider", 3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](12, "app-_doorslider", 3);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](12, "app-doorslider", 3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](13, "app-_doorslider", 3);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](13, "app-doorslider", 3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](14, "app-_doorslider", 3);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](14, "app-doorslider", 3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](15, "app-_doorslider", 3);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](15, "app-doorslider", 3);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -2170,7 +2122,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("tabHeading", ctx.tabHeadingFinishing);
         }
       },
-      directives: [_homebanner_homebanner_component__WEBPACK_IMPORTED_MODULE_2__["_HomebannerComponent"], _websiteintro_websiteintro_component__WEBPACK_IMPORTED_MODULE_3__["_WebsiteintroComponent"], _doorslider_doorslider_component__WEBPACK_IMPORTED_MODULE_4__["_DoorsliderComponent"]],
+      directives: [_homebanner_homebanner_component__WEBPACK_IMPORTED_MODULE_2__["HomebannerComponent"], _websiteintro_websiteintro_component__WEBPACK_IMPORTED_MODULE_3__["WebsiteintroComponent"], _doorslider_doorslider_component__WEBPACK_IMPORTED_MODULE_4__["DoorsliderComponent"]],
       styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3B1YmxpYy9ob21lL21haW5wYWdlL21haW5wYWdlLmNvbXBvbmVudC5jc3MifQ== */"]
     });
     /*@__PURE__*/
@@ -2182,6 +2134,303 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           selector: 'app-mainpage',
           templateUrl: './mainpage.component.html',
           styleUrls: ['./mainpage.component.css']
+        }]
+      }], function () {
+        return [];
+      }, null);
+    })();
+    /***/
+
+  },
+
+  /***/
+  "./src/app/public/home/websiteintro/websiteintro.component.ts":
+  /*!********************************************************************!*\
+    !*** ./src/app/public/home/websiteintro/websiteintro.component.ts ***!
+    \********************************************************************/
+
+  /*! exports provided: WebsiteintroComponent */
+
+  /***/
+  function srcAppPublicHomeWebsiteintroWebsiteintroComponentTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "WebsiteintroComponent", function () {
+      return WebsiteintroComponent;
+    });
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _services_common_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! ../../../_services/common.service */
+    "./src/app/_services/common.service.ts");
+
+    var WebsiteintroComponent = // Injective Common Service into Constructor to Use Global Variables.
+    function WebsiteintroComponent(commonService) {
+      _classCallCheck(this, WebsiteintroComponent);
+
+      this.commonService = commonService;
+    };
+
+    WebsiteintroComponent.ɵfac = function WebsiteintroComponent_Factory(t) {
+      return new (t || WebsiteintroComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_common_service__WEBPACK_IMPORTED_MODULE_1__["CommonService"]));
+    };
+
+    WebsiteintroComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+      type: WebsiteintroComponent,
+      selectors: [["app-websiteintro"]],
+      decls: 14,
+      vars: 3,
+      consts: [[1, "our-product-section"], [1, "container"], [1, "border-heading", "text-center"], [1, "widget", 2, "margin", "0"], [1, "heading-label", "color-gray", "font-14"], [1, "line"], [1, "widget-inner"], [1, "font-52"], ["href", "#", "title", "", 1, "cust_btn", "cust_btn-primary", "cust_btn-lg"]],
+      template: function WebsiteintroComponent_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "section", 0);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "div", 3);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "span", 4);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](6, "div", 5);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "div", 6);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "h2", 7);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](9);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "p");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](11);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "a", 8);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](13, "Read More");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", ctx.commonService.WebsiteInfo.WebsiteBannerTagLine, " ");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("Welcome To ", ctx.commonService.WebsiteInfo.WebsiteBannerTitle, "");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("", ctx.commonService.WebsiteInfo.CompanyDesc, " ");
+        }
+      },
+      styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3B1YmxpYy9ob21lL3dlYnNpdGVpbnRyby93ZWJzaXRlaW50cm8uY29tcG9uZW50LmNzcyJ9 */"]
+    });
+    /*@__PURE__*/
+
+    (function () {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](WebsiteintroComponent, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
+        args: [{
+          selector: 'app-websiteintro',
+          templateUrl: './websiteintro.component.html',
+          styleUrls: ['./websiteintro.component.css']
+        }]
+      }], function () {
+        return [{
+          type: _services_common_service__WEBPACK_IMPORTED_MODULE_1__["CommonService"]
+        }];
+      }, null);
+    })();
+    /***/
+
+  },
+
+  /***/
+  "./src/app/public/menu/menu.component.ts":
+  /*!***********************************************!*\
+    !*** ./src/app/public/menu/menu.component.ts ***!
+    \***********************************************/
+
+  /*! exports provided: MenuComponent */
+
+  /***/
+  function srcAppPublicMenuMenuComponentTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "MenuComponent", function () {
+      return MenuComponent;
+    });
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/router */
+    "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+
+    var MenuComponent = /*#__PURE__*/function () {
+      function MenuComponent() {
+        _classCallCheck(this, MenuComponent);
+      }
+
+      _createClass(MenuComponent, [{
+        key: "ngOnInit",
+        value: function ngOnInit() {}
+      }]);
+
+      return MenuComponent;
+    }();
+
+    MenuComponent.ɵfac = function MenuComponent_Factory(t) {
+      return new (t || MenuComponent)();
+    };
+
+    MenuComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+      type: MenuComponent,
+      selectors: [["app-menu"]],
+      decls: 25,
+      vars: 0,
+      consts: [[1, "nav", "d-md-flex", "justify-content-md-center"], ["routerLink", "", 1, "active"], ["routerLink", "/interior"], ["routerLink", "/exterior"], ["routerLink", "/prehanging"], ["routerLink", "/partshardware"], ["routerLink", "/designpricetools"], ["routerLink", "/static/services"], ["routerLink", "/static/contactus"]],
+      template: function MenuComponent_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "ul", 0);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "li");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "a", 1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, "Home");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "li");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "a", 2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, "Interior Doors");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "li");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "a", 3);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](9, "Exterior Doors");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "li");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "a", 4);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](12, "Prehanging");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "li");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "a", 5);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](15, "Parts and Hardware");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](16, "li");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](17, "a", 6);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](18, "Design and Price Tool");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](19, "li");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](20, "a", 7);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](21, "Services");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](22, "li");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](23, "a", 8);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](24, "Contact Us");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+      },
+      directives: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterLinkWithHref"]],
+      styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3B1YmxpYy9tZW51L21lbnUuY29tcG9uZW50LmNzcyJ9 */"]
+    });
+    /*@__PURE__*/
+
+    (function () {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](MenuComponent, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
+        args: [{
+          selector: 'app-menu',
+          templateUrl: './menu.component.html',
+          styleUrls: ['./menu.component.css']
         }]
       }], function () {
         return [];
@@ -2476,12 +2725,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var environment = {
       production: false,
-      Cell: "604.677.1144",
-      OfficePhone: "1.888.238.2687",
-      Fax: "604.677.1146",
-      ContactEmail: "info@doorex.com",
-      WebsiteName: "Door Seattle",
-      DevelopedBy: "Department of MIS, EcoTechDoor"
+      WEBAPIURL: 'http://localhost:58326/api/',
+      // CurrentWebsite - Pass Enum Text from Below WEBSITES Enum
+      // CurrentWebsiteID - Pass Enum ID from Below WEBSITES Enum
+      // Load DoorBC Website
+
+      /*
+      CurrentWebsite: "DoorsBC",
+      CurrentWebsiteID: 4
+      */
+      // Load Doors Seattle Website
+      CurrentWebsite: "DoorSeattle",
+      CurrentWebsiteID: 1
     };
     /* Setting Different Websites Values depending on the Website Domain to load content of the selected website */
 
@@ -2491,6 +2746,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       WEBSITES[WEBSITES["DoorSeattle"] = 1] = "DoorSeattle";
       WEBSITES[WEBSITES["DoorsSeattle"] = 2] = "DoorsSeattle";
       WEBSITES[WEBSITES["EcoTechDoor"] = 3] = "EcoTechDoor";
+      WEBSITES[WEBSITES["DoorsBC"] = 4] = "DoorsBC";
     })(WEBSITES || (WEBSITES = {}));
     /***/
 
