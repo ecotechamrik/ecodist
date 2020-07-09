@@ -1404,17 +1404,15 @@ __webpack_require__.r(__webpack_exports__);
 // The list of file replacements can be found in `angular.json`.
 const environment = {
     production: false,
-    WEBAPIURL: 'http://localhost:58326/api/',
+    WEBAPIURL: 'http://35.182.240.200/api/',
     // CurrentWebsite - Pass Enum Text from Below WEBSITES Enum
     // CurrentWebsiteID - Pass Enum ID from Below WEBSITES Enum
     // Load DoorBC Website
-    /*
     CurrentWebsite: "DoorsBC",
     CurrentWebsiteID: 4
-    */
     // Load Doors Seattle Website
-    CurrentWebsite: "DoorSeattle",
-    CurrentWebsiteID: 1
+    //CurrentWebsite: "DoorSeattle",
+    //CurrentWebsiteID: 1
 };
 /* Setting Different Websites Values depending on the Website Domain to load content of the selected website */
 var WEBSITES;
