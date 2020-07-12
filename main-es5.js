@@ -2725,7 +2725,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var environment = {
       production: false,
-      WEBAPIURL: 'http://35.182.240.200/api/',
+      WEBAPIURL: 'http://35.183.71.183/api/',
       // CurrentWebsite - Pass Enum Text from Below WEBSITES Enum
       // CurrentWebsiteID - Pass Enum ID from Below WEBSITES Enum
       // Load DoorBC Website
