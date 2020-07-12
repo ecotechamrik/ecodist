@@ -1404,7 +1404,7 @@ __webpack_require__.r(__webpack_exports__);
 // The list of file replacements can be found in `angular.json`.
 const environment = {
     production: false,
-    WEBAPIURL: 'http://35.183.71.183/api/',
+    WEBAPIURL: 'http://35.182.210.87/api/',
     // CurrentWebsite - Pass Enum Text from Below WEBSITES Enum
     // CurrentWebsiteID - Pass Enum ID from Below WEBSITES Enum
     // Load DoorBC Website
