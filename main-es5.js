@@ -2729,21 +2729,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       // CurrentWebsite - Pass Enum Text from Below WEBSITES Enum
       // CurrentWebsiteID - Pass Enum ID from Below WEBSITES Enum
       // Load DoorBC Website
-      //CurrentWebsite: "DoorsBC",
-      //CurrentWebsiteID: 4
-      // Load Doors Seattle Website
-      CurrentWebsite: "DoorSeattle",
-      CurrentWebsiteID: 1
+      CurrentWebsite: "DoorsBC",
+      CurrentWebsiteID: 2 // Load Doors Seattle Website
+      //CurrentWebsite: "DoorSeattle",
+      //CurrentWebsiteID: 1
+
     };
     /* Setting Different Websites Values depending on the Website Domain to load content of the selected website */
 
     var WEBSITES;
 
     (function (WEBSITES) {
-      WEBSITES[WEBSITES["DoorSeattle"] = 1] = "DoorSeattle";
-      WEBSITES[WEBSITES["DoorsSeattle"] = 2] = "DoorsSeattle";
-      WEBSITES[WEBSITES["EcoTechDoor"] = 3] = "EcoTechDoor";
-      WEBSITES[WEBSITES["DoorsBC"] = 4] = "DoorsBC";
+      WEBSITES[WEBSITES["DoorSeattle"] = 3] = "DoorSeattle";
+      WEBSITES[WEBSITES["DoorsSeattle"] = 1] = "DoorsSeattle";
+      WEBSITES[WEBSITES["EcoTechDoor"] = 4] = "EcoTechDoor";
+      WEBSITES[WEBSITES["DoorsBC"] = 2] = "DoorsBC";
     })(WEBSITES || (WEBSITES = {}));
     /***/
 
