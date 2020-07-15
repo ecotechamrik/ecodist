@@ -179,7 +179,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(HomeService, [{
         key: "getWebsiteDetailsByID",
         value: function getWebsiteDetailsByID(WebsiteID) {
-          return this.httpClient.get("".concat(src_environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].WEBAPIURL, "home/").concat(WebsiteID));
+          return this.httpClient.get("".concat(src_environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].WEBAPIURL, "website/").concat(WebsiteID));
         }
       }]);
 
@@ -2729,11 +2729,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       // CurrentWebsite - Pass Enum Text from Below WEBSITES Enum
       // CurrentWebsiteID - Pass Enum ID from Below WEBSITES Enum
       // Load DoorBC Website
-      CurrentWebsite: "DoorsBC",
-      CurrentWebsiteID: 4 // Load Doors Seattle Website
-      //CurrentWebsite: "DoorSeattle",
-      //CurrentWebsiteID: 1
-
+      //CurrentWebsite: "DoorsBC",
+      //CurrentWebsiteID: 4
+      // Load Doors Seattle Website
+      CurrentWebsite: "DoorSeattle",
+      CurrentWebsiteID: 1
     };
     /* Setting Different Websites Values depending on the Website Domain to load content of the selected website */
 

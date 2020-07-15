@@ -99,7 +99,7 @@ class HomeService {
     }
     //Get Website Details from Database based on given Website ID
     getWebsiteDetailsByID(WebsiteID) {
-        return this.httpClient.get(`${src_environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].WEBAPIURL}home/${WebsiteID}`);
+        return this.httpClient.get(`${src_environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].WEBAPIURL}website/${WebsiteID}`);
     }
 }
 HomeService.ɵfac = function HomeService_Factory(t) { return new (t || HomeService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"])); };
@@ -1408,11 +1408,11 @@ const environment = {
     // CurrentWebsite - Pass Enum Text from Below WEBSITES Enum
     // CurrentWebsiteID - Pass Enum ID from Below WEBSITES Enum
     // Load DoorBC Website
-    CurrentWebsite: "DoorsBC",
-    CurrentWebsiteID: 4
+    //CurrentWebsite: "DoorsBC",
+    //CurrentWebsiteID: 4
     // Load Doors Seattle Website
-    //CurrentWebsite: "DoorSeattle",
-    //CurrentWebsiteID: 1
+    CurrentWebsite: "DoorSeattle",
+    CurrentWebsiteID: 1
 };
 /* Setting Different Websites Values depending on the Website Domain to load content of the selected website */
 var WEBSITES;
